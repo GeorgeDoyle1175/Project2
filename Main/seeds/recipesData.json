@@ -1,0 +1,33 @@
+[
+    {
+      "id": "Chicken-Alfredo",
+      "name": "Chicken Alfredo",
+      "description": "A creamy and delicious pasta dish featuring tender chicken and savory Alfredo sauce.",
+      "ingredients": [
+        "1 lb. boneless, skinless chicken breasts",
+        "1 lb. fettuccine pasta",
+        "1/2 cup unsalted butter",
+        "1 pint heavy cream",
+        "1 cup freshly grated Parmesan cheese",
+        "1/2 tsp. garlic powder",
+        "1/2 tsp. salt",
+        "1/4 tsp. black pepper",
+        "Fresh parsley, chopped, for garnish"
+      ],
+      "image": "https://www.yummly.com/recipe/Chicken-Alfredo-2731671",
+      "url": "https://www.yummly.com/recipe/Chicken-Alfredo-2731671"
+    },
+    {
+      "id": "Homemade-Pizza",
+      "name": "Homemade Pizza",
+      "description": "A classic homemade pizza recipe with your choice of toppings, perfect for a fun night in with family and friends.",
+      "ingredients": [
+        "1 lb. pizza dough",
+        "1/2 cup pizza sauce",
+        "1 cup shredded mozzarella cheese",
+        "Your choice of toppings (such as pepperoni, mushrooms, bell peppers, etc.)"
+      ],
+      "image": "https://www.yummly.com/recipe/Homemade-Pizza-2401747",
+      "url": "https://www.yummly.com/recipe/Homemade-Pizza-2401747"
+    }
+  ]
