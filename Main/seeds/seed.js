@@ -1,23 +1,25 @@
 const sequelize = require('../config/connection');
-const { Recipe } = require('../models');
-const { fetchRecipes } = require('../services/tasty-api');
+const { User, Recipe } = require('../models');
 
-async function seed() {
+const userData = require('./userData.json');
+const recipesData = require('./recipesData.json');
+
+const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const recipes = await fetchRecipes();
+  const users = await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
 
-  for (const recipe of recipes) {
+  for (const recipe of recipesData) {
     await Recipe.create({
-      name: recipe.name,
-      description: recipe.description,
-      imageUrl: recipe.thumbnail_url,
-      instructions: JSON.stringify(recipe.instructions),
-      ingredients: JSON.stringify(recipe.sections[0].components)
+      ...recipe,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
-  console.log('Database seeded successfully');
-}
+  process.exit(0);
+};
 
-seed();
+seedDatabase();

@@ -6,23 +6,36 @@ class Recipe extends Model {}
 Recipe.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     ingredients: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.TEXT,
+      allowNull: false,
+      get() {
+        return JSON.parse(this.getDataValue('ingredients'));
+      },
+      set(value) {
+        this.setDataValue('ingredients', JSON.stringify(value));
+      },
     },
-    instructions: {
+    image: {
       type: DataTypes.STRING,
-      allowNull: false
-    }
+      allowNull: true,
+    },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     sequelize,
