@@ -1,21 +1,21 @@
 {{#each recipes as |recipe|}}
   <div class="card mb-4">
     <div class="card-header">
-      <h2>{{recipe.name}}</h2>
+      <h2>{{recipe.dataValues.name}}</h2>
     </div>
     <div class="card-body">
       <div class="row">
         <div class="col-md-4">
-          <img src="{{recipe.image}}" alt="{{recipe.name}}" class="img-fluid">
+          <img src="{{recipe.dataValues.image}}" alt="{{recipe.dataValues.name}}" class="img-fluid">
         </div>
         <div class="col-md-8">
-          <p>{{recipe.description}}</p>
-          <button type="button" class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#{{recipe.id}}-ingredients">Show Ingredients</button>
+          <p>{{recipe.dataValues.description}}</p>
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#{{recipe.dataValues.id}}-ingredients">Show Ingredients</button>
         </div>
       </div>
       <div id="{{recipe.id}}-ingredients" class="collapse">
         <ul>
-          {{#each recipe.ingredients as |ingredient|}}
+          {{#each recipe.dataValues.ingredients as |ingredient|}}
             <li>{{ingredient}}</li>
           {{/each}}
         </ul>

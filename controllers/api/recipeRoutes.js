@@ -42,7 +42,13 @@ router.get('/search', async (req, res) => {
       },
     });
 
-    res.status(200).json(recipes);
+    // const searchResults = recipes.get({ plain: true });
+    // console.log(searchResults);
+    console.log(recipes);
+    res.render('recipe', { recipes });
+   //res.send({ recipes });
+
+    //res.status(200).json(recipes);
   } catch (err) {
     res.status(500).json(err);
   }
