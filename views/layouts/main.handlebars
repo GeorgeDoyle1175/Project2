@@ -17,27 +17,13 @@
         <a href="/">SOS Recipes</a>
       </h1>
       <nav>
-        {{!-- saved recipes button --}}
-        {{#if user}}
-          {{!-- {{#unless (isLoginUrl)}} --}}
-          <a href="/profile">My Favorites</a>
-        {{else}}
-          <a href="/login">My Favorites</a>
-        {{/if}}
-
-{{!-- Share your own recipes --}}
-
-        {{#if user}}
-          {{!-- {{#unless (isLoginUrl)}} --}}
-          <a href="/profile">Share your Own Recipes</a>
-        {{else}}
-          <a href="/login">Share your Own Recipes</a>
-        {{/if}}
-
         <!-- Conditionally render login or logout links -->        
         {{#if logged_in}}
+        <a href="/profile">Share your Own Recipes</a>
+        <a href="/recipe">My Favorites</a>
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
+        {{else if loginPage}}
         {{else}}
         <a href="/login">Login/Register</a>
         {{/if}}
