@@ -35,6 +35,7 @@ router.get('/search', async (req, res) => {
     console.log(ingredient, req.query);
 
     const recipes = await Recipe.findAll({
+      limit: 5,
       where: {
         ingredients: {
           [Op.substring]: [ingredient],
