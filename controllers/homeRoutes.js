@@ -5,6 +5,7 @@ router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const recipeData = await Recipe.findAll({
+      limit: 5,
       include: [
         {
           model: User,
@@ -14,7 +15,7 @@ router.get('/', async (req, res) => {
     });
     // Serialize data so the template can read it
     const projects = recipeData.map((recipeBook) => recipeBook.get({ plain: true }));
-    // Pass serialized data and session flag into template
+
     res.render('homepage', {
       projects,
       logged_in: req.session.logged_in
@@ -23,6 +24,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get('/project/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
