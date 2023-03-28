@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<div class="row mt-4">
+{{!-- <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Project:</h3>
 
@@ -25,24 +25,39 @@
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
+  </div> --}}
 
-  {{!-- {{#if projects.length}}
+  {{#if recipes.length}}
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+    <h3>My Created Recipes</h3>
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+    {{#each recipes as |recipe|}}
+  <div class="card mb-4">
+    <div class="card-header">
+      <h2>{{recipe.name}}</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{recipe.image}}" alt="{{recipe.name}}" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+          <p>{{recipe.description}}</p>
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#{{recipe.id}}-ingredients">Show Ingredients</button>
+        </div>
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      <div id="{{recipe.id}}-ingredients" class="collapse">
+        <ul>
+          {{#each recipe.ingredients as |ingredient|}}
+            <li>{{ingredient}}</li>
+          {{/each}}
+        </ul>
       </div>
     </div>
-    {{/each}}
   </div>
-  {{/if}} --}}
+{{/each}}
+<h3>My Favorite Recipes</h3>
+  {{/if}}
 </div>
 
 <script src="./js/profile.js"></script>
