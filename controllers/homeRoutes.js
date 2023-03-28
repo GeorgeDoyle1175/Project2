@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { Recipe, User } = require('../models');
+const { User, FavoriteRecipe, Recipe } = require('../models');
 const withAuth = require('../utils/auth');
+
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -62,6 +63,25 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Get all favorite recipes for a user
+router.get('/profile/favorites', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const user = await User.findByPk(req.session.user_id, {
+      include: [{ model: FavoriteRecipe, include: Recipe }],
+    });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    const favorites = user.FavoriteRecipes.map(favorite => favorite.Recipe.toJSON());
+    res.render('favorites', { favorites });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
