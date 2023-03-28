@@ -19,8 +19,8 @@ html {
  */
 body {
   margin: 0;
+  background-color: #000000;
 }
-
 /**
  * Render the `main` element consistently in IE.
  */
