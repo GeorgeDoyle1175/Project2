@@ -17,10 +17,12 @@ router.post('/', async (req, res) => {
   }
 });
 
+// ({ where: { email: JSON.parse(req.body.email) } }); 
+
 // User login
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: JSON.parse(req.body.email) } });
+    const userData = await User.findOne({ where: { email: req.body.email } });
     console.log({userData})
     if (!userData) {
       res
