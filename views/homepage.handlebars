@@ -1,10 +1,30 @@
 <main>
-  <form class="form-inline my-2 my-lg-0">
+  {{!-- <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" id="search-input" type="search" placeholder="What ingredient are you using??"
       aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="submit">Search</button>
-  </form>
+  </form> --}}
+
+{{!-- New search Bar and Button --}}
+<div class="relative w-96">
+  <input type="search" class="block w-full py-3 px-4 border-2 border-gray-300 rounded-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600 transition duration-300" id="search-input" placeholder="What ingredient are you using??">
+  <button type="submit" id="search-btn" class="absolute top-0 right-0 h-full px-5 py-2 text-white font-semibold bg-yellow-500 hover:bg-yellow-600 rounded-full transition duration-300">Search</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
 </main>
+<br>
 {{log projects}}
 
 {{#each projects as |recipe|}}
