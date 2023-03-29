@@ -1,0 +1,33 @@
+<body>
+    <img src = "assets/css/images/SOS-logo.png">
+    <div class = "head">
+    <h1>Create Your Own Recipe</h1>
+</div>
+
+<div class = "recipe-form">
+    <h1>Recipe: <input class="input" type="text" id="recipe-name"></h1>   
+</div>
+
+<div class = "ingredients">
+    <h2>ingredients:</h2>    
+    <textarea id="ingredients-list" name="ingredients"
+    rows="5" cols="33">
+    </textarea>
+</div>
+
+<div class = "description">
+   <h2>Step-by-Step:</h2>
+    <textarea id="description" name="description"
+   rows="5" cols="33">
+    </textarea>
+</div>
+
+<div>
+    <h2>Picture</h2>
+     <input type="file" id="picture" name="picture"><br><br>
+     
+</div>
+
+<button class="glow-on-hover" type="button" id="submit-btn">Submit</button>
+
+<script src="/public/js/createrecipes.js"></script>

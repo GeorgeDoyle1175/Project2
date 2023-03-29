@@ -15,16 +15,21 @@ router.get('/', async (req, res) => {
       ],
     });
     // Serialize data so the template can read it
-    const projects = recipeData.map((recipeBook) => recipeBook.get({ plain: true }));
+    const recipes = recipeData.map((recipeBook) => recipeBook.get({ plain: true }));
 
     res.render('homepage', {
-      projects,
+      recipes,
       logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+router.get('/recipe/new', (req, res) => {
+  res.render('recipeform')
+}
+)
 
 router.get('/project/:id', async (req, res) => {
   try {
