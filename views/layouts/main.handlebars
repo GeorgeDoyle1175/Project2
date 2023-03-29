@@ -13,23 +13,45 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">SOS Recipes</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->        
-        {{#if logged_in}}
-        <a href="/profile">Share your Own Recipes</a>
-        <a href="/recipe">My Favorites</a>
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else if loginPage}}
-        {{else}}
-        <a href="/login">Login/Register</a>
-        {{/if}}
-      </nav>
+    <header>
+      <nav class="bg-gray-900 shadow-lg" style="background-color: #07272d;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-16">
+            <div class="flex items-center">
+              <a href="/" class="flex-shrink-0 flex items-center">
+                <img class="h-8 w-auto" src="/public/assets/images/SOS-Recipes-Small.png" alt="logo">
+              </a>
+              <div class="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
+                {{#if logged_in}}
+                <a href="/pending" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Share Your Own Recipes</a>
+                <a href="/profile" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">My Profile</a>
+                {{/if}}
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="hidden sm:ml-6 sm:flex sm:items-center justify-end flex-1">
+                {{#if logged_in}}
+                <button class="ml-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded no-button" id="logout">Logout</button>
+                {{else if loginPage}}
+                {{else}}
+                <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" style="background-color: #ffb600;"> <a href="/login"> Log In/Register </a></button>
+                {{/if}}
+              </div>
+              <div class="-mr-2 flex items-center sm:hidden">
+                <button type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                  <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav> 
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
@@ -49,3 +71,18 @@
 </body>
 
 </html>
+
+
+
+      {{!-- <nav>
+        <!-- Conditionally render login or logout links -->        
+        {{#if logged_in}}
+        <a href="/pending">Share your Own Recipes</a>
+        <a href="/recipe">My Favorites</a>
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else if loginPage}}
+        {{else}}
+        <a href="/login">Login/Register</a>
+        {{/if}}
+      </nav> --}}
