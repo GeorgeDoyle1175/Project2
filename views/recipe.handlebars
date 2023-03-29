@@ -1,25 +1,30 @@
-{{#each recipes as |recipe|}}
-  <div class="card mb-4">
-    <div class="card-header">
-      <h2>{{recipe.dataValues.name}}</h2>
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-4">
-          <img src="{{recipe.dataValues.image}}" alt="{{recipe.dataValues.name}}" class="img-fluid">
+<div class=" max-w-8xl mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  {{#each recipes as |recipe|}}
+    <div class="card relative rounded-lg overflow-hidden shadow-lg bg-white">
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-2 text-blue-900">{{recipe.dataValues.name}}</h2>
+        <img src="{{recipe.dataValues.image}}" alt="{{recipe.dataValues.name}}" class="w-full h-72 object-cover object-top rounded-lg">
+        <div class="h-32 overflow-y-auto">
+          <p class="text-gray-700 text-base mt-4">{{recipe.dataValues.description}}</p>
         </div>
-        <div class="col-md-8">
-          <p>{{recipe.dataValues.description}}</p>
-          <button type="button" class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#{{recipe.dataValues.id}}-ingredients">Show Ingredients</button>
+        <div class="flex justify-between mt-4">
+          <button type="button" class="text-sm font-medium text-blue-900 hover:underline rounded-md px-3 py-2 bg-yellow-400 mr-2" data-toggle="collapse" data-target="#{{recipe.dataValues.id}}-ingredients">Show Ingredients</button>
+          <a href="{{recipe.dataValues.url}}" class=" text-sm font-medium text-white rounded-md px-3 py-2 bg-blue-900 hover:bg-blue-800 hover:underline">Visit  Recipe</a>
         </div>
       </div>
       <div id="{{recipe.id}}-ingredients" class="collapse">
-        <ul>
+        <ul class="p-4">
           {{#each recipe.dataValues.ingredients as |ingredient|}}
             <li>{{ingredient}}</li>
           {{/each}}
         </ul>
       </div>
     </div>
-  </div>
-{{/each}}
+  {{/each}}
+</div>
+
+
+
+
+
+

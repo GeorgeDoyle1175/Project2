@@ -1,64 +1,45 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="py-8">
+    <h2 class="text-5xl font-bold mb-4">Welcome, {{name}}!</h2>
+    {{#if recipes.length}}
+    <h3 class="text-xl font-bold my-8">My Created Recipes:</h3>
+    
+    <div class=" max-w-8xl mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
-{{!-- <div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Project:</h3>
-
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <label for="project-funding">:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div> --}}
-
-  {{#if recipes.length}}
-  <div class="col-md-6 project-list">
-    <h3>My Created Recipes</h3>
-
-    {{#each recipes as |recipe|}}
-  <div class="card mb-4">
-    <div class="card-header">
-      <h2>{{recipe.name}}</h2>
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-4">
-          <img src="{{recipe.image}}" alt="{{recipe.name}}" class="img-fluid">
+      {{#each recipes as |recipe|}}
+      <div class="card relative rounded-lg overflow-hidden shadow-lg bg-white">
+        <div class="p-4">
+          <h2 class="text-xl font-bold mb-2 text-blue-900">{{recipe.name}}</h2>
+          <img src="{{recipe.image}}" alt="{{recipe.name}}" class="w-full h-72 object-cover object-top rounded-lg">
+          <div class="h-32 overflow-y-auto">
+            <p class="text-gray-700 text-base mt-4">{{recipe.description}}</p>
+          </div>
+          <div class="flex justify-between mt-4">
+            <button type="button"
+              class="text-sm font-medium text-blue-900 hover:underline rounded-md px-3 py-2 bg-yellow-400 mr-2"
+              data-toggle="collapse" data-target="#{{recipe.id}}-ingredients">Show Ingredients</button>
+            <a href="{{recipe.url}}"
+              class=" text-sm font-medium text-white rounded-md px-3 py-2 bg-blue-900 hover:bg-blue-800 hover:underline">Visit
+              Recipe</a>
+          </div>
         </div>
-        <div class="col-md-8">
-          <p>{{recipe.description}}</p>
-          <button type="button" class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#{{recipe.id}}-ingredients">Show Ingredients</button>
-        </div>
-      </div>
-      <div id="{{recipe.id}}-ingredients" class="collapse">
-        <ul>
-          {{#each recipe.ingredients as |ingredient|}}
+        <div id="{{recipe.id}}-ingredients" class="collapse">
+          <ul class="p-4">
+            {{#each recipe.ingredients as |ingredient|}}
             <li>{{ingredient}}</li>
-          {{/each}}
-        </ul>
+            {{/each}}
+          </ul>
+        </div>
       </div>
+      {{/each}}
     </div>
+
+
+    <h3 class="text-xl font-bold my-8">My Favorite Recipes</h3>
+    {{/if}}
   </div>
-{{/each}}
-<h3>My Favorite Recipes</h3>
-  {{/if}}
 </div>
+
 
 <!-- profile.handlebars -->
 
@@ -84,3 +65,4 @@
 
 
 <script src="./js/profile.js"></script>
+
