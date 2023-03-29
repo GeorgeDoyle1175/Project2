@@ -1,14 +1,14 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const name = document.querySelector('#name-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+  if (name && email && password) {
+    const response = await fetch('/users', {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ name, email, password }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -17,10 +17,14 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to create user');
     }
   }
 };
+
+const signupForm = document.querySelector('.signup-form');
+signupForm.addEventListener('submit', newFormHandler);
+
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -38,9 +42,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
 
 document
   .querySelector('.project-list')
