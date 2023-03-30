@@ -6,22 +6,19 @@
   </form> --}}
 
 {{!-- New search Bar and Button --}}
-<div class="relative w-96">
-  <input type="search" class="block w-full py-3 px-4 border-2 border-gray-300 rounded-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600 transition duration-300" id="search-input" placeholder="What ingredient are you using??">
-  <button type="submit" id="search-btn" class="absolute top-0 right-0 h-full px-5 py-2 text-white font-semibold bg-yellow-500 hover:bg-yellow-600 rounded-full transition duration-300">Search</button>
+<div id="search-container" class="flex items-center justify-center w-2/3 mx-auto">
+  <div class="food-bowl flex-shrink-0"><img src="/assets/images/bowl.png" alt="bowl of noodles"></div>
+  <div class="search-title flex-grow">
+    <h2 class="letsget py-0 px-10 my-0 mx-0" style="color: white; font-weight: bold; font-size: 30px;">Lets get</h2>
+    <h2 class="cooking py-0 px-10 my-0 mx-0" style="color: #ffb600; font-weight: bold; font-size: 55px;">Cooking</h2>
+    <div class="flex items-center mt-6">
+      <input type="search" class="block w-full py-3 px-5 border-2 border-gray-300 rounded-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-600 transition duration-300" id="search-input" placeholder="What ingredient are you using??">
+      <button type="submit" id="search-btn" class="ml-4 h-full px-4 py-4 text-white font-semibold bg-yellow-500 hover:bg-yellow-600 rounded-full transition duration-300 flex items-center">
+        Search
+      </button>
+    </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 </main>
 <br>
