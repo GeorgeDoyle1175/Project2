@@ -1,15 +1,96 @@
 <body>
-    <img src = "assets/css/images/SOS-logo.png">
     <div class = "head">
-    <h1>Create Your Own Recipe</h1>
+    <div class="max-w-4xl mx-auto">
+  <h1 class="text-center text-3xl font-bold mb-8">Create Your Own Recipe</h1>
+</div>
 </div>
 
-<div class = "recipe-form">
-    <h1>Recipe: <input class="input" type="text" id="recipe-name"></h1>   
+<div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
+  <div class="py-4 px-6">
+    <form>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="name">
+          Recipe Name
+        </label>
+        <input
+          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="name"
+          type="text"
+          placeholder="Enter recipe name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="description">
+          Recipe Description
+        </label>
+        <textarea
+          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="description"
+          placeholder="Enter recipe description (max 300 characters)"
+          name="description"
+          required
+          maxlength="300"
+        ></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="ingredients">
+          Ingredients
+        </label>
+        <input
+          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="ingredients"
+          type="text"
+          placeholder="Enter ingredients separated by comma"
+          name="ingredients"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="image">
+          Image URL
+        </label>
+        <input
+          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="image"
+          type="url"
+          placeholder="Enter image URL"
+          name="image"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="url">
+          Recipe URL
+        </label>
+        <input
+          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="url"
+          type="url"
+          placeholder="Enter recipe URL"
+          name="url"
+          required
+        />
+      </div>
+      <div class="flex justify-center">
+        <button
+          class="bg-yellow-500 hover:bg-yellow-600 focus:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Create Recipe
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{{!-- <div class = "recipe-form">
+    <h1>Recipe: <input class="input" type="text" id="recipe-name"></h1>
 </div>
 
 <div class = "ingredients">
-    <h2>ingredients:</h2>    
+    <h2>ingredients:</h2>
     <textarea id="ingredients-list" name="ingredients"
     rows="5" cols="33">
     </textarea>
@@ -25,9 +106,9 @@
 <div>
     <h2>Picture</h2>
      <input type="file" id="picture" name="picture"><br><br>
-     
+
 </div>
 
-<button class="glow-on-hover" type="button" id="submit-btn">Submit</button>
+<button class="glow-on-hover" type="button" id="submit-btn">Submit</button> --}}
 
 <script src="/public/js/createrecipes.js"></script>

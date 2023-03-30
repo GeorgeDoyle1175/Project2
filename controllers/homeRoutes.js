@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/recipe/new', (req, res) => {
+router.get('/new', (req, res) => {
   res.render('recipeform')
 }
 )
@@ -50,6 +50,7 @@ router.get('/project/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -58,10 +59,11 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Recipe }],
     });
-    const user = userData.get({ plain: true });
-    console.log(user);
+    console.log(userData);
+
+    const recipes = userData.get({ plain: true });
     res.render('profile', {
-      ...user,
+      ...recipes,
       logged_in: true
     });
   } catch (err) {
