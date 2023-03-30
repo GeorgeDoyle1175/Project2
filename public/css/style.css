@@ -35,9 +35,13 @@ body {
   margin-left: 5%;
   margin-top: 10%;
   background-color: #07272d;
+  background-image: url(/assets/images/Frame\ 2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   border-style: solid;
   border-color: white;
   border-radius: 15px;
+
   /* width: 90%; */
 }
 
