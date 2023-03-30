@@ -1,30 +1,52 @@
-<div class="mt-20">
-  <h2 class="text-center text-3xl font-bold mb-8">Create a Profile</h2>
-  <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
-    <div class="py-4 px-6">
-      <form class="form signup-form">
-        <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2" for="name-signup">
+<div class="max-w-4xl mx-auto">
+  <h1 class="text-center text-3xl font-bold ">Create An Account</h1>
+  <br>
+  <div class="flex flex-col items-center justify-center   ">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full">
+      <h2 class="text-4xl font-bold text-gray-800 mb-6">Signup</h2>
+      <form class="signup-form space-y-4">
+        <div>
+          <label class="block text-gray-700 font-bold mb-2 text-xl" for="name-signup">
             Name
           </label>
-          <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="name-signup" name="name-signup" required>
+          <input class="form-input block w-full px-4 py-3 rounded-lg bg-gray-200 border-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none text-xl"
+            id="name-signup"
+            type="text"
+            placeholder="Name"
+          />
         </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2" for="email-signup">
+        <div>
+          <label class="block text-gray-700 font-bold mb-2 text-xl" for="email-signup">
             Email
           </label>
-          <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="email-signup" name="email-signup" required>
+          <input class="form-input block w-full px-4 py-3 rounded-lg bg-gray-200 border-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none text-xl"
+            id="email-signup"
+            type="text"
+            placeholder="Email"
+          />
         </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2" for="password-signup">
+        <div>
+          <label class="block text-gray-700 font-bold mb-2 text-xl" for="password-signup">
             Password
           </label>
-          <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" id="password-signup" name="password-signup" required>
+          <input
+            class="form-input block w-full px-4 py-3 rounded-lg bg-gray-200 border-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none text-xl"
+            id="password-signup"
+            type="password"
+            placeholder="Password"
+          />
         </div>
-        <div class="flex justify-center">
-          <button class="bg-yellow-500 hover:bg-yellow-600 focus:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="signup-btn" type="submit">Signup</button>
+        <div>
+          <button
+              class="block w-full px-6 py-4 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600 focus:bg-yellow-600 focus:outline-none text-2xl"
+              type="submit"
+          >
+              Signup
+          </button>
         </div>
       </form>
     </div>
   </div>
 </div>
+
+<script src="./js/signup.js"></script>
