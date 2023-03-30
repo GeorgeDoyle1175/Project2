@@ -4,6 +4,11 @@ header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
+.letsget .cooking {
+  padding: 0;
+  margin: 0;
+}
+
 .no-button {
   background: none;
   border: none;
