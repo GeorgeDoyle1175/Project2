@@ -23,7 +23,7 @@
               </a>
               <div class="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
                 {{#if logged_in}}
-                <a href="/recipe/new" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Share Your Own Recipes</a>
+                <a href="/new" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">Share Your Own Recipes</a>
                 <a href="/profile" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium">My Profile</a>
                 {{/if}}
               </div>
@@ -34,7 +34,13 @@
                 <button class="ml-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded no-button" id="logout">Logout</button>
                 {{else if loginPage}}
                 {{else}}
-                <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" style="background-color: #ffb600;"> <a href="/login"> Log In/Register </a></button>
+                <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" style="background-color: #ffb600; margin-right: 15px;">
+                <a href="/login"> Log In </a>
+                </button>
+
+                <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" style="background-color: #ffb600;">
+                <a href="/signup"> Register </a>
+                </button>
                 {{/if}}
               </div>
               <div class="-mr-2 flex items-center sm:hidden">
@@ -51,7 +57,7 @@
             </div>
           </div>
         </div>
-      </nav> 
+      </nav>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
@@ -75,7 +81,7 @@
 
 
       {{!-- <nav>
-        <!-- Conditionally render login or logout links -->        
+        <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/pending">Share your Own Recipes</a>
         <a href="/recipe">My Favorites</a>

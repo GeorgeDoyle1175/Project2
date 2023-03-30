@@ -1,9 +1,9 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   <div class="py-8">
     <h2 class="text-5xl font-bold mb-4">Welcome, {{name}}!</h2>
-    {{#if recipes.length}}
+    {{#if user.length}}
     <h3 class="text-xl font-bold my-8">My Created Recipes:</h3>
-    
+
     <div class=" max-w-8xl mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
       {{#each recipes as |recipe|}}
@@ -65,4 +65,3 @@
 
 
 <script src="./js/profile.js"></script>
-
