@@ -60,7 +60,7 @@ h1 {
   margin-right: 40%;
   margin-top: 10%;
   color: white;
-  font-family: 'Kanit', sans-serif
+  font-family: 'Kanit', sans-serif;
   text-align: center;
   font-size: 40px;
 }
@@ -267,4 +267,3 @@ nav a:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
 }
-
