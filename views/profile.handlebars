@@ -3,7 +3,7 @@
     <h2 class="text-5xl font-bold mb-4">Welcome, {{name}}!</h2>
     {{#if recipes.length}}
     <h3 class="text-xl font-bold my-8 project-list">My Created Recipes:</h3>
-    
+
     <div class=" max-w-8xl mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
       {{#each recipes as |recipe|}}
@@ -36,32 +36,6 @@
 
 
     <h3 class="text-xl font-bold my-8">My Favorite Recipes</h3>
-
+  {{/if}}
   </div>
 </div>
-
-
-<!-- profile.handlebars -->
-
-{{!-- <h1>Create Your Own Recipe</h1>
-<form id="recipe-form">
-  <label for="recipe-name">Recipe Name:</label>
-  <input type="text" id="recipe-name" name="recipe-name"><br><br>
-
-  <label for="ingredients">Ingredients:</label>
-  <textarea id="ingredients" name="ingredients"></textarea><br><br>
-
-  <label for="description">Description:</label>
-  <textarea id="description" name="description"></textarea><br><br>
-
-  <label for="picture">Picture:</label>
-  <input type="file" id="picture" name="picture"><br><br>
-
-  <label for="instructions">Instructions:</label>
-  <textarea id="instructions" name="instructions"></textarea><br><br>
-
-  <button type="submit" id="submit-btn">Submit</button>
-</form> --}}
-
-
-<script src="./js/profile.js"></script>
