@@ -1,4 +1,4 @@
-<div class="row">
+{{!-- <div class="row">
   <div class="col-md-6">
     <h2>Login</h2>
 
@@ -15,6 +15,53 @@
         <button class="btn btn-primary" type="submit">login</button>
       </div>
     </form>
+  </div> --}}
+
+<div class="flex flex-col items-center justify-center h-screen ">
+  <div class="bg-white p-8 rounded-lg shadow-lg max-w-3xl w-full">
+    <h2 class="text-4xl font-bold text-gray-800 mb-6">Login</h2>
+    <form class="space-y-4">
+      <div>
+        <label class="block text-gray-700 font-bold mb-2 text-xl" for="email-login">
+          Email
+        </label>
+        <input
+          class="block w-full px-4 py-3 rounded-lg bg-gray-200 border-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none text-xl"
+          id="email-login"
+          type="text"
+          placeholder="Email"
+        />
+      </div>
+      <div>
+        <label class="block text-gray-700 font-bold mb-2 text-xl" for="password-login">
+          Password
+        </label>
+        <input
+          class="block w-full px-4 py-3 rounded-lg bg-gray-200 border-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none text-xl"
+          id="password-login"
+          type="password"
+          placeholder="Password"
+        />
+      </div>
+      <div>
+        <button
+          class="block w-full px-6 py-4 text-white rounded-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-600 focus:outline-none text-2xl"
+          type="submit"
+        >
+          Login
+        </button>
+      </div>
+    </form>
   </div>
+</div>
+
+
+
+
+ 
+
+
+
+
 
 <script src="./js/login.js"></script>
