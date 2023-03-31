@@ -1,13 +1,18 @@
 const router = require('express').Router();
+
+// Importing the User model
 const { User } = require('../../models');
 
+// User signup
 router.post('/signup', async (req, res) => {
-  try {
+  try { 
+    // Creating a new user with data from the request body
     const userData = await User.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password })
 
+    // Saving user session data and sending a JSON response with user data
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -20,11 +25,10 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-// ({ where: { email: JSON.parse(req.body.email) } });
-
 // User login
 router.post('/login', async (req, res) => {
   try {
+    // Finding a user by email and checking their password
     const userData = await User.findOne({ where: { email: req.body.email } });
     console.log({userData})
     if (!userData) {
@@ -34,6 +38,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    // Saving user session data and sending a JSON response with user data
     const validPassword = await userData.checkPassword(req.body.password);
     validPassword?console.log({validPassword}):""
 

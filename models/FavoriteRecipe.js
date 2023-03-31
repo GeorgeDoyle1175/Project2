@@ -1,10 +1,13 @@
+// Import necessary dependencies
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 const User = require('./User.js');
 const Recipe = require('./Recipe.js');
 
+// Define FavoriteRecipe model
 class FavoriteRecipe extends Model {}
 
+// Initialize FavoriteRecipe model with fields and constraints
 FavoriteRecipe.init(
   {
     id: {
@@ -37,4 +40,5 @@ FavoriteRecipe.init(
   }
 );
 
+// Export FavoriteRecipe model for use elsewhere in the application
 module.exports = FavoriteRecipe;

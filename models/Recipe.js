@@ -1,3 +1,4 @@
+// Import necessary models
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
@@ -46,4 +47,5 @@ Recipe.init(
   }
 );
 
+// Export both models for use elsewhere in the application
 module.exports = Recipe;
