@@ -1,16 +1,26 @@
-# Project2 - SOS Need Dinner 
+# Project 2 - SOS Dinner 
+
 This App was created to allow an user to search for any recipe based on limited or specific ingredients they may have available in their pantry. This is intended to facilitate the culinary creations and imagination of users. 
 User also have the option to create their own profile where they can save recipes and also add their own creations for other users to enjoy. 
 
 
-## Page Built 
+## Page Structure
 
-* The main Webpage uses a RapidAPI "Tasty" that populates different recipes, using seeds.sql to seige from the API. 
-* The user will be able to set parameter in the search page by (explain method use in the search handlebar)
-* The user will be abel to create a profile (descirbe methods for this handlebar)
-* Secuity measure are in place to protect use data and store their information. 
-* Information such as personal recipies and favorite recipes is also saved in their profile. 
-* Another page will allow users to add their own recipes, as a form, users will be able to upload a picture of their dish, a title, a description and the ingredients. 
+This webpage uses different handlebars and Tailwind CSS styling for its front end developement. 
+The main handlebar contains fixed code such as the Nav bar and has a body appended. It also provided with the log-out option if the user is logged in.
+
+following handlebars are homepage, where the initial searchbox for the user appears. Depending if the user is already registered they may either log in or Register, to then have access to their profile and to submit a new "recipe" into the page's database. 
+
+Sequilize and mySQL were used to manage the database created with hardcode rather than with an API. 
+
+Express Node JS are used create a buildable page in this case conneccting all handlebar and routes. 
+
+
+* As a user, I want to search for available recipes based on the specific ingredients I have at my disposal.
+* As a user, I want to be able to create an account.
+* As a user, I want to be able to save recipes that I find so that they will populate each time I am on my account.
+* As a user, I want to have the option to write and submit my own recipes.
+ 
 
 ## Project Requirements 
 
@@ -42,10 +52,12 @@ User also have the option to create their own profile where they can save recipe
 
 * Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-## Webpage Deployed 
+## Deployed Webpage link and GitHub
 Screenshot of deployed app 
 
 (insert link to deployed page)
+* https://github.com/GeorgeDoyle1175/Project2
+
 
 ## Credits 
 Webpage was created by all team members equaly
